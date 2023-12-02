@@ -60,7 +60,7 @@ impl Solution for Day1B {
                 }
 
                 if let Some(all_remaining) = all_remaining {
-                    if let Some(n) = get_numeric_word_and_size(all_remaining) {
+                    if let Some(n) = get_numeric_word(all_remaining) {
                         if first.is_none() {
                             first = Some(n);
                         }
@@ -89,7 +89,7 @@ impl Solution for Day1B {
     }
 }
 
-fn get_numeric_word_and_size(input: &str) -> Option<char> {
+fn get_numeric_word(input: &str) -> Option<char> {
     if input.starts_with("one") {
         return Some('1');
     }

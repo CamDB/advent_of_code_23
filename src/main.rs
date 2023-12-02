@@ -1,7 +1,7 @@
 use std::env;
 
 use day::Day;
-use solutions::Solution;
+use easybench::bench;
 
 use crate::day::InputType;
 
@@ -22,7 +22,7 @@ fn main() {
         let solution = solutions::get_solution(&day);
         let inputs = day.get_inputs().expect("failed to read inputs for day");
         for i in inputs {
-            tracing::info!("Running input: {:?}", i);
+            tracing::info!("Running input: {:?}", i.path);
             let actual = solution.run(&i.contents).expect("failed to run solution");
             if i.input_type == InputType::Test {
                 let expected = i.get_expected_output().expect("could not read expected output");
@@ -32,7 +32,10 @@ fn main() {
                     tracing::info!("Test {:?} passed! Got {}, expected {}", &i.path, actual, expected);
                 }
             } else {
-                tracing::info!("Input {:?} got:\n\n{}", &i.path, actual);
+                tracing::info!("Input {:?} got:\n{}", &i.path, actual);
+
+                tracing::info!("Running benchmarks:");
+                println!("{}", bench(|| solution.run(&i.contents)));
             }
         }
     }
