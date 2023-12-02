@@ -56,6 +56,7 @@ impl Input {
 #[derive(Debug)]
 pub enum Day {
     Day1A,
+    Day1B
 }
 
 impl TryFrom<String> for Day {
@@ -64,6 +65,7 @@ impl TryFrom<String> for Day {
     fn try_from(value: String) -> Result<Day, anyhow::Error> {
         match value.as_str() {
             "1a" => Ok(Day::Day1A),
+            "1b" => Ok(Day::Day1B),
             _ => Err(anyhow::anyhow!("Invalid day number {}", value)),
         }
     }
