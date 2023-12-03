@@ -15,5 +15,6 @@ pub fn get_solution(day: &Day) -> Box<dyn Solution> {
         Day::Day2A => Box::new(day2::Day2A),
         Day::Day2B => Box::new(day2::Day2B),
         Day::Day3A => Box::new(day3::Day3A),
+        Day::Day3B => Box::new(day3::Day3B),
     }
 }
