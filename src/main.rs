@@ -34,8 +34,8 @@ fn main() {
             } else {
                 tracing::info!("Input {:?} got:\n{}", &i.path, actual);
 
-                tracing::info!("Running benchmarks:");
-                println!("{}", bench(|| solution.run(&i.contents)));
+                // tracing::info!("Running benchmarks:");
+                // println!("{}", bench(|| solution.run(&i.contents)));
             }
         }
     }
