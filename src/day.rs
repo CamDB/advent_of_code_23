@@ -61,6 +61,8 @@ pub enum Day {
     Day2B,
     Day3A,
     Day3B,
+    Day4A,
+    Day4B,
 }
 
 impl TryFrom<String> for Day {
@@ -74,6 +76,8 @@ impl TryFrom<String> for Day {
             "2b" => Ok(Day::Day2B),
             "3a" => Ok(Day::Day3A),
             "3b" => Ok(Day::Day3B),
+            "4a" => Ok(Day::Day4A),
+            "4b" => Ok(Day::Day4B),
             _ => Err(anyhow::anyhow!("Invalid day number {}", value)),
         }
     }

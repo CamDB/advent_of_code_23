@@ -41,8 +41,6 @@ impl Solution for Day3A {
             }
         }
 
-        tracing::info!("{:?}", numbers_map);
-
         // Loop through the entire input, storing any numbers adj to symbols.
         let mut valid_numbers: Vec<u64> = Vec::new();
         for (i, c) in chars.iter().enumerate() {
@@ -59,8 +57,6 @@ impl Solution for Day3A {
                 adj_numbers.iter().for_each(|n| valid_numbers.push(*n));
             }
         }
-
-        tracing::info!("{:?}", valid_numbers);
 
         let sum: u64 = valid_numbers.iter().sum();
         Ok(sum.to_string())
@@ -105,8 +101,6 @@ impl Solution for Day3B {
                 current_n = String::new();
             }
         }
-
-        tracing::info!("{:?}", numbers_map);
 
         // Loop through the entire input, finding all symbols with two numbers adjacent.
         let mut sum: u64 = 0;
